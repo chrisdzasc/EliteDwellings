@@ -1,28 +1,28 @@
 .testimonial{
-    background-color: $verde;
-    font-size: 2.4rem;
-    padding: 2rem;
-    color: $blanco;
-    border-radius: 2rem;
+    background-color: $verde; // Se le asigna un color de fondo verde
+    font-size: 2.4rem; // Tamaño de fuente de 24 pixeles
+    padding: 2rem; // Relleno de 20 pixeles
+    color: $blanco; // Color del texto a blanco
+    border-radius: 2rem; // Se le coloca el borde de las esquinas redondeado
 
     blockquote{
-        padding-left: 5rem;
-        position: relative;
+        padding-left: 5rem; // Relleno de 50 pixeles en la parte izquierda
+        position: relative; // Posicion relativa para alinear el pseudo-elemento
 
-        &::before{
-            content: '';
-            background-image: url(../img/comilla.svg);
-            background-repeat: no-repeat;
-            width: 6rem;
-            height: 8rem;
-            display: block;
-            position: absolute;
-            left: -2rem;
+        &::before{ // Antes del contenido, agrega el elemento
+            content: ''; // Contenido vacio
+            background-image: url(../img/comilla.svg); // Se le coloca una imagen de fondo
+            background-repeat: no-repeat; // Para que no se repita la imagen
+            width: 6rem; // Ancho de 60 pixeles de la imagen
+            height: 8rem; // Altura de 80 pixeles de la imagen
+            display: block; // Hace que el elemento sea un bloque
+            position: absolute; // Posicion absoluta
+            left: -2rem; // Distancia a la izquierda del bloque
         }
     }
 
     p{
-        text-align: right;
-        color: $blanco;
+        text-align: right; // Coloca el texto en el lado derecho
+        color: $blanco; // Color del texto a blanco
     }
 }
