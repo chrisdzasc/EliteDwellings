@@ -31,8 +31,10 @@
     text-align: center; // El texto va a estar centrado
     margin-top: calc($separacion / 2);
     display: $display; // Se va a colocar el display que le estén pasando
+    border: none;
 
     &:hover{ // Cuando se coloque el mouse arriba del boton
         background-color: darken($bgColor, 5); // Se va a hacer más oscuro del mismo color que le estamos pasando
+        cursor: pointer;
     }
 }

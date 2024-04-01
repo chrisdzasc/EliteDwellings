@@ -1,0 +1,47 @@
+.formulario{
+
+    p{
+        font-size: 1.4rem; // Tamaño del texto a 14 pixeles
+        color: $grisOscuro; // Le asigna el color gris oscuro al texto
+        margin: 2rem 0 0 0; // Le agrega margen de 20 pixeles en la parte superior y 0 pixeles en derecha, abajo e izquierda
+    }
+
+    legend{
+        font-size: 2rem; // Tamaño del texto a 20 pixeles
+        color: $grisOscuro; // Le asigna el color gris oscuro al texto
+    }
+
+    label{
+        font-weight: $bold; // Le agrega negritas al texto
+        text-transform: uppercase; // Convierte el texto a mayúsculas
+        display: block; // Se colocan en columnas, tomando todo el ancho disponible y colocando cada una abajo de la otra.
+    }
+
+    input:not([type="submit"]), // Para todos los input que no sean submit
+    textarea,
+    select{ 
+        padding: 1rem; // Relleno de 10 pixeles en todas las direcciones.
+        display: block; // Se colocan en columnas, tomando todo el ancho disponible y colocando cada una abajo de la otra.
+        width: 100%; // Toma el ancho de 100% disponible
+        background-color: $blanco; // Color de fondo a blanco
+        border: 1px solid $gris; // Le agrega un borde de 1 pixel y de color gris
+        border-radius: 1rem; // Le agrega un borde redondo de 10 pixeles.
+        margin-bottom: 2rem; // Le agrea un margen inferior de 20 pixeles
+    }
+
+    textarea{
+        height: 20rem; // Le asgina una altura de 200 pixeles
+    }
+
+    .forma-contacto{
+        max-width: 30rem; // Le asigna un máximo de 300 pixeles de ancho
+        display: flex; // Se van a colocar de izquierda a derecha
+        justify-content: space-between; // Distribuye los elementos a lo largo del eje principal con el máximo espacio posible entre ellos
+        align-items: center; // Alinea los elementos verticalmente en el centro
+    }
+
+    input[type="radio"]{
+        margin: 0; // Elimina el margen
+        width: auto; // Establece el ancho automaticamente
+    }
+}
