@@ -7,6 +7,7 @@
 .anuncio{
     background-color: lighten($gris, 5); // Color de fondo con un filtro de más claro
     border: 1px solid darken($gris, 10); // Un borde de 1 pixel con un color teniendo un filtro más oscuro
+    margin-bottom: 2rem; // Margen inferior de 20 pixeles
 
     .contenido-anuncio{
         padding: 2rem; // Relleno de 20 pixeles en todas las direcciones

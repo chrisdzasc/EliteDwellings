@@ -1,18 +1,54 @@
+.derecha{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include tablet{
+        align-items: flex-end;
+    }
+
+    .dark-mode-boton{
+        width: 3rem; // Ancho de 30 pixeles
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+        filter: invert(100%);
+
+        &:hover{
+            cursor: pointer;
+        }
+
+        @include tablet{
+            margin-top: 0;
+        }
+    }
+}
+
 .barra{
     display: flex; // Coloca el contenido en fila y columnas
     flex-direction: column; // Coloca de abajo hacia arriba
     padding-top: 3rem; // Relleno de la parte superior de 30 pixeles
+    align-items: center;
+
     @include tablet{ // Media Query para Tablets
         flex-direction: row; // Coloca todo en una fila
         justify-content: space-between; // Envia el logo al lado izquierda y los enlaces al lado derecho
+        align-items: flex-end; // Manda el contenido hacia la derecha 
     }
 }
 
 .navegacion{
 
-    @include tablet{
-        display: flex;
-        align-items: center; // Centra verticalmente
+    // Incialmente el elemento está oculto
+    visibility: hidden; // Oculta el elemento
+    opacity: 0; // La opacidad del elemento es 0 (totalmente transparente)
+    height: 0;
+    transition: visibility .3s ease-in-out, opacity 0.5s linear, height 0.5s linear; // Transicion para la visibilidad y opacidad
+
+    @include tablet{ // Media Query para Tablet
+        display: flex; // Se convierte en un contenedor flexible
+        align-items: center; // Centra verticalmente los elementos
+        opacity: 1; // La opacidad se establece en 1 (totalmente visible)
+        visibility: visible; // El elemento se hace visible
     }
 
     a{
@@ -30,4 +66,25 @@
             }
         }
     }
+}
+
+// Menú de hamburguesa
+.mobile-menu{
+    @include tablet{ // Media Query para tablet
+        display: none; // No va a estar visible
+    }
+
+    img{
+        width: 5rem; // Ancho de la foto de 50 pixeles
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+
+.mostrar{
+    visibility: visible; // El elemento se hace visible
+    opacity: 1; // La opacidad se establece en 1 (totalmente visible)
+    height: auto;
 }
