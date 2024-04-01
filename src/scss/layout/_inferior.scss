@@ -1,0 +1,51 @@
+@include tablet{ // Media Query para Tablet
+    .seccion-inferior{
+        display: grid; // Organiza los elementos en filas y columnas
+        grid-template-columns: 2fr 1fr; // Son dos columnas. La primera toma 2/3 del espacio y la segunda toma 1/3 del espacio
+        column-gap: 2rem; // 20 pixeles de espacio entre las 2 columnas
+    }
+}
+
+.entrada-blog{
+    margin-bottom: 2rem; // Agregarle 20 pixeles de margen hacia abajo entre cada entrada
+
+    @include tablet{ // Media Query para tablet
+        display: grid;
+        grid-template-columns: 1fr 2fr; // Son dos columnas. La primera toma 1/3 del espacio y la segunda toma 2/3 del espacio
+        column-gap: 2rem; // 20 pixeles de espacio entre las 2 columnas
+    }
+
+    &:last-of-type{ // Seleccionamos la ultima entrada de blog
+        margin-bottom: 0; // Le quitamos el margen inferior
+    }
+}
+
+.texto-entrada{
+    a{ // Todos los enlaces contenido en la clase de .texto-entrada
+        color: $negro; // Color del texto de los enlaces.
+        margin-top: 2rem; // Margen superior de 20 pixeles de los enlaces.
+        display: block; // Hace que los enlaces sean elementos de bloque.
+
+        @include tablet{ // Media Query para tablet
+            margin-top: 0; // Quita el margen superior
+        }
+    }
+
+    h4{ // Todos los h4 contenidos en la clase de .texto-entrada
+        margin: 0; // Elimina el margen predeterminado
+        line-height: 1.4; // Interlineado del texto en h4
+
+        &::after{ // Pseudoelemento 'after' para los elementos h4
+            content: ''; // Contenido vacio del pseudoelemento
+            display: block; // Hace que el pseudoelemento sea un elemento de bloque
+            width: 15rem; // Ancho de 150 pixeles del pseudoelemento
+            height: .5rem; // Altura de 5 pixeles del pseudoelemento
+            background-color: $verde; // Color de fondo del pseudoelemento
+            margin-top: 1rem; // Margen superior de 10 pixeles del pseudolemento
+        }
+    }
+
+    span{ // Todos los span contenidos en la clase de .text-entrada
+        color: $amarillo; // Color del texto a amarillo de los elementos span
+    }
+}

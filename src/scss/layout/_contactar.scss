@@ -1,0 +1,27 @@
+.no-webp .imagen-contacto{ // En caso de que no soporte el formato webp
+    background-image: url(../img/encuentra.jpg); // Le colocamos una imagen de fondo
+}
+
+.webp .imagen-contacto{ // En caso de que soporte el formato webp
+    background-image: url(../img/encuentra.webp); // Le colocamos una imagen de fondo
+}
+
+.imagen-contacto{
+    background-position: center center; // Estará centrado verticalmente y horizontalmente
+    background-size: cover; // Cubrirá todo el espacio disponible
+    padding: $separacion * 2 0; // Agrega relleno
+    display: flex; // Hace columnas y filas
+    flex-direction: column; // Convierte en columnas
+    align-items: center; // Alinea el contenido al centro
+    
+    h2{ // El h2 que está en la clase de .imagen-contacot
+        font-size: 4rem; // Tamaño de 40 pixeles
+        font-weight: $black; // Convierte el texto en negritas
+        color: $blanco; // Cambia el color a blanco
+    }
+
+    p{ // El p que está en la clase de .imagen.contacto
+        font-size: 1.8rem; // Tamaño de 18 pixeles
+        color: $blanco; // Cambia el color a blanco
+    }
+}

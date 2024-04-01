@@ -21,3 +21,18 @@
     gap: $espaciado;
     grid-template-columns: repeat($columnas, 1fr);
 }
+
+@mixin botones($bgColor, $display ){
+    background-color: $bgColor; // Fondo de color amarillo
+    color: $blanco; // Color blanco
+    font-weight: $bold; // Negritas el texto
+    text-decoration: none; // Elimina el interlineado
+    padding: 1rem 3rem; // 10 pixeles arriba y abajo, 30 pixeles izquierda y derecha
+    text-align: center; // El texto va a estar centrado
+    margin-top: calc($separacion / 2);
+    display: $display; // Se va a colocar el display que le estén pasando
+
+    &:hover{ // Cuando se coloque el mouse arriba del boton
+        background-color: darken($bgColor, 5); // Se va a hacer más oscuro del mismo color que le estamos pasando
+    }
+}

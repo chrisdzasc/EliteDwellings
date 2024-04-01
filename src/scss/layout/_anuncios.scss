@@ -1,0 +1,44 @@
+@include tablet{ // Media Query para Tablet
+    .contenedor-anuncios{ 
+        @include grid(3, 2rem); // Crea 3 columnas de 20 pixeles de espacio entre cada una
+    }
+}
+
+.anuncio{
+    background-color: lighten($gris, 5); // Color de fondo con un filtro de más claro
+    border: 1px solid darken($gris, 10); // Un borde de 1 pixel con un color teniendo un filtro más oscuro
+
+    .contenido-anuncio{
+        padding: 2rem; // Relleno de 20 pixeles en todas las direcciones
+    }
+
+    h3, p{ // Todos los h3 y p contenidos en la clase de anuncio
+        margin: 0; // Tienen un margen de 0
+    }
+
+    .precio{ 
+        color: $verde; // Se le asigna un color verde
+        font-weight: $bold; // Hace negritas el texto
+        font-size: 3rem; // Toma un tamaño de 30 pixeles
+    }
+}
+
+.iconos-caracteristicas{
+    display: flex; // Convierte el contenido en filas y columnas
+    list-style: none; // Le quita las viñetas a la lista
+    padding: 0; // Le quita el relleno
+
+    li{ // La lista contenida en la clase de iconos-caracteristica
+        flex: 1; // Toman el mismo tamaño los iconos
+        display: flex; // Convierte el contenido en filas y columnas
+
+        img{ // Todas las imagenes contenida en la lista en la clase iconos-caracteristicas
+            flex: 0 0 3rem; 
+            margin-right: 1rem; // Les coloca un margen a la derecha de 10 pixeles
+        }
+
+        p{ // Todos los parrafos contenidos en la lista en la clase de iconos-caracteristicas
+            font-weight: $black; // Hace el texto en negritas
+        }
+    }
+}

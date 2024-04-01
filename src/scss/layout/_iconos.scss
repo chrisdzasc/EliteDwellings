@@ -1,0 +1,17 @@
+@include tablet{ // Media Query para Tablet
+    .iconos-nosotros{ 
+        @include grid(3, 2rem); // Crea 3 columnas de 20 pixeles de espacio entre cada una
+    }
+}
+
+.icono{
+    text-align: center; // Todo el texto esté centrado
+
+    img{ // Los img que estén contenidos en la clase de icono
+        height: 10rem; // Altura de 100 píxeles
+    }
+
+    h3{ // Los h3 que estén contenidos en la clase de icono
+        text-transform: uppercase; // Transforma el texto en mayúsculas
+    }
+}

@@ -1,0 +1,41 @@
+.no-webp .incio{ // En caso de que no soporte el formato webp
+    background-image: url(../img/header.jpg); // Le colocamos una imagen de fondo
+}
+
+.webp .inicio{ // En caso de que soporte el formato webp
+    background-image: url(../img/header.webp); // Le colocamos una imagen de fondo
+}
+
+.header{
+    background-color: $grisOscuro; // Colocando el color del fondo de header
+    padding: 1rem 0 3rem 0; // Relleno de 10 pixeles arriba, 0 pixeles a la derecha, 30 pixeles abajo y 0 pixeles a la izquierda.
+
+    &.inicio{ // Hace referencia al mismo elemento
+        background-position: center center; // Para que la imagen esté en el centro tanto vertical como horizontalmente
+        background-size: cover; // Toma todo el espacio disponible
+
+        @include tablet { // Media Query para tablet
+            min-height: 70rem; // Una altura minima de 700 píxeles
+        }
+
+        .contenido-header{
+            @include tablet { // Media Querya para tablet
+                min-height: 70rem; // Una altura minima de 700 pixeles
+            }
+        }
+    }
+}
+
+.contenido-header{
+    display: flex; // Crea filas y columnas
+    flex-direction: column; // Se cambia a columnas, se coloca de arriba hacia abajo
+    justify-content: space-between; // Empuja hacia abajo el contenido
+
+    h1{
+        text-align: left; // Alinea de lado izquierdo el titulo
+        color: $blanco; // El color del texto
+        font-weight: $bold; // Hacer negritas el texto
+        line-height: 2; // Interlineado de 2
+        max-width: 60rem; // Va a crear un salto de linea porque va a cortar el texto
+    }
+}

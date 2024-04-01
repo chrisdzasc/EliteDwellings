@@ -1,0 +1,33 @@
+.barra{
+    display: flex; // Coloca el contenido en fila y columnas
+    flex-direction: column; // Coloca de abajo hacia arriba
+    padding-top: 3rem; // Relleno de la parte superior de 30 pixeles
+    @include tablet{ // Media Query para Tablets
+        flex-direction: row; // Coloca todo en una fila
+        justify-content: space-between; // Envia el logo al lado izquierda y los enlaces al lado derecho
+    }
+}
+
+.navegacion{
+
+    @include tablet{
+        display: flex;
+        align-items: center; // Centra verticalmente
+    }
+
+    a{
+        color: $blanco;
+        text-decoration: none; // Le quita el interlineado
+        font-size: 2.2rem; // Tamaño de letra de 22 pixeles
+        display: block; // Se colocan en columnas y toman todo el ancho disponible
+        text-align: center; // Se van a centrar los enlaces
+
+        @include tablet{
+            margin-right: 2rem; // Le agrega separación entre enlaces de 20 pixeles cada uno a la derecha
+
+            &:last-of-type{ // Al ultimo enlace
+                margin-right: 0; // No va a tener margen
+            }
+        }
+    }
+}
