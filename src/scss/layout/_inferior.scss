@@ -20,6 +20,12 @@
     }
 }
 
+.informacion-meta{
+    span{ // Todos los span contenidos en la clase de .text-entrada
+        color: $amarillo; // Color del texto a amarillo de los elementos span
+    }
+}
+
 .texto-entrada{
     a{ // Todos los enlaces contenido en la clase de .texto-entrada
         color: $negro; // Color del texto de los enlaces.
@@ -43,9 +49,5 @@
             background-color: $verde; // Color de fondo del pseudoelemento
             margin-top: 1rem; // Margen superior de 10 pixeles del pseudolemento
         }
-    }
-
-    span{ // Todos los span contenidos en la clase de .text-entrada
-        color: $amarillo; // Color del texto a amarillo de los elementos span
     }
 }
