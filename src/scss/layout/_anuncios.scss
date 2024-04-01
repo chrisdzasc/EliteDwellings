@@ -15,18 +15,19 @@
     h3, p{ // Todos los h3 y p contenidos en la clase de anuncio
         margin: 0; // Tienen un margen de 0
     }
+}
 
-    .precio{ 
-        color: $verde; // Se le asigna un color verde
-        font-weight: $bold; // Hace negritas el texto
-        font-size: 3rem; // Toma un tamaño de 30 pixeles
-    }
+.precio{ 
+    color: $verde; // Se le asigna un color verde
+    font-weight: $bold; // Hace negritas el texto
+    font-size: 3rem; // Toma un tamaño de 30 pixeles
 }
 
 .iconos-caracteristicas{
     display: flex; // Convierte el contenido en filas y columnas
     list-style: none; // Le quita las viñetas a la lista
     padding: 0; // Le quita el relleno
+    max-width: 40rem; // Se le asigna un ancho máximo de 400 pixeles
 
     li{ // La lista contenida en la clase de iconos-caracteristica
         flex: 1; // Toman el mismo tamaño los iconos

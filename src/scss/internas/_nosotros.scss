@@ -1,13 +1,13 @@
 .contenido-nosotros{
 
-    @include tablet{
-        @include grid(2, 2rem);
+    @include tablet{ // Media Query para Tablet
+        @include grid(2, 2rem); // Mixin de grid para hacer 2 columnas con una separacion de 20 pixeles
     }
 }
 
 .texto-nosotros blockquote{
-    font-weight: $black;
-    font-size: 2.2rem;
-    margin: 0;
-    padding-left: 1rem 0 3rem 0;
+    font-weight: $black; // Hacer el texto en negritas
+    font-size: 2.2rem; // Tamaño de 22 pixeles de la letra
+    margin: 0; // Margen 0 en todas las direcciones 
+    padding-left: 1rem 0 3rem 0; // Relleno de 10 pixeles en la parte superior, 0 lado derecho, 30 inferior y 0 lado izquierdo
 }
