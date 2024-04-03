@@ -1,5 +1,8 @@
 <?php
-    include './includes/templates/header.php'; // Incluir o agregar otro archivo
+
+    require 'includes/funciones.php'; // Incluye el archivo 'funciones.php' desde el directorio 'includes'
+    
+    incluirTemplate('header'); // Llama a la función incluirTemplate() con dos argumentos: 'header' como el nombre del archivo de plantilla a incluir.
 ?>
 
     <main class="contenedor seccion contenido-centrado">
@@ -52,5 +55,5 @@
     </main>
 
 <?php
-    include './includes/templates/footer.php'; // Incluir o agregar otro archivo
+        incluirTemplate('footer');
 ?>
