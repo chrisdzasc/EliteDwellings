@@ -208,19 +208,6 @@
         </section>
     </main>
 
-    <footer class="footer seccion">
-        <div class="contenedor contenedor-footer">
-            <nav class="navegacion"> <!-- Enlaces -->
-                <a href="nosotros.html">Nosotros</a> <!-- Enlace para llevarnos a la página de nostros -->
-                <a href="anuncios.html">Anuncios</a> <!-- Enlace para llevarnos a la página de anuncios -->
-                <a href="blog.html">Blog</a> <!-- Enlace para llevarnos a la página de blog -->
-                <a href="contacto.html">Contacto</a> <!-- Enlace para llevarnos a la página de contacto -->
-            </nav>
-        </div>
-
-        <p class="copyright">Todos los derechos Reservados 2024 &copy;</p>
-    </footer>
-    
-    <script src="build/js/bundle.min.js"></script>
-</body>
-</html>
+<?php
+    include './includes/templates/footer.php'; // Incluir o agregar otro archivo
+?>
