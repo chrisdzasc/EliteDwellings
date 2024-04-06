@@ -17,6 +17,10 @@
     &.actualizado{
         background-color: $azul;
     }
+
+    &.eliminado{
+        background-color: $rojo;
+    }
 }
 
 table.propiedades{
