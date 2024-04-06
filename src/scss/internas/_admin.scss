@@ -13,6 +13,10 @@
     &.exito{
         background-color: $verde;
     }
+
+    &.actualizado{
+        background-color: $azul;
+    }
 }
 
 table.propiedades{
@@ -38,4 +42,10 @@ table.propiedades{
         display: block;
         margin: 0 auto;
     }
+}
+
+.imagen-small{
+    width: 20rem;
+    display: block;
+    margin: 0 auto;
 }
