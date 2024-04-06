@@ -14,3 +14,28 @@
         background-color: $verde;
     }
 }
+
+table.propiedades{
+    margin-top: 4rem; // Separacion de 40 pixeles de la tabla con el contenido superior
+    width: 100%; // La tabla va a tomar todo el ancho disponible
+    border-spacing: 0;
+
+    thead{
+        background-color: $verde;
+
+        th{
+            color: $blanco;
+            padding: 2rem;
+        }
+    }
+
+    td{
+        text-align: center;
+    }
+
+    .imagen-tabla{
+        width: 10rem;
+        display: block;
+        margin: 0 auto;
+    }
+}
