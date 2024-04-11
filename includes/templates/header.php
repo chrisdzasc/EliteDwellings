@@ -1,3 +1,12 @@
+<?php
+
+    if(!isset($_SESSION)){ // Si la sesion no está arrancada
+        session_start(); // Arranca la sesion
+    }
+
+    $auth = $_SESSION['login'] ?? false;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,10 +34,13 @@
                     <img class="dark-mode-boton" src="/bienesraices/build/img/dark-mode.svg" alt="Botón para Dark Mode">
 
                     <nav class="navegacion"> <!-- Enlaces -->
-                        <a href="nosotros.php">Nosotros</a> <!-- Enlace para llevarnos a la página de nostros -->
-                        <a href="anuncios.php">Anuncios</a> <!-- Enlace para llevarnos a la página de anuncios -->
-                        <a href="blog.php">Blog</a> <!-- Enlace para llevarnos a la página de blog -->
-                        <a href="contacto.php">Contacto</a> <!-- Enlace para llevarnos a la página de contacto -->
+                        <a href="/bienesraices/nosotros.php">Nosotros</a> <!-- Enlace para llevarnos a la página de nostros -->
+                        <a href="/bienesraices/anuncios.php">Anuncios</a> <!-- Enlace para llevarnos a la página de anuncios -->
+                        <a href="/bienesraices/blog.php">Blog</a> <!-- Enlace para llevarnos a la página de blog -->
+                        <a href="/bienesraices/contacto.php">Contacto</a> <!-- Enlace para llevarnos a la página de contacto -->
+                        <?php if($auth): ?>
+                            <a href="/bienesraices/cerrar-sesion.php">Cerrar Sesión</a>
+                        <?php endif; ?>
                     </nav>
                 </div>
 

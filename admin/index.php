@@ -1,5 +1,12 @@
 <?php
 
+    require '../includes/funciones.php'; // Incluye el archivo 'funciones.php' desde el directorio 'includes'
+    $auth = estaAutenticado();
+
+    if(!$auth){ // Si no es true
+        header('Location: ../index.php'); // Redirecciona a la página de inicio del proyecto
+    }
+
     // Importar la conexion
     require '../includes/config/database.php';
     $db = conectarDB();
@@ -35,8 +42,6 @@
             }
         }
     }
-
-    require '../includes/funciones.php'; // Incluye el archivo 'funciones.php' desde el directorio 'includes'
     
     incluirTemplate('header'); // Llama a la función incluirTemplate() con dos argumentos: 'header' como el nombre del archivo de plantilla a incluir.
 ?>
