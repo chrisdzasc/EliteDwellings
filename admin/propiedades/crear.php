@@ -1,16 +1,12 @@
 <?php
 
-    require '../../includes/funciones.php'; // Incluye el archivo 'funciones.php' desde el directorio 'includes'
-    $auth = estaAutenticado();
+    require '../../includes/app.php'; // Incluye el archivo 'funciones.php' desde el directorio 'includes'
 
-    if(!$auth){ // Si no es true
-        header('Location: ../../index.php'); // Redirecciona a la página de inicio del proyecto
-    }
+    use App\Propiedad;
 
-    // Base de Datos
-    require '../../includes/config/database.php';
+    estaAutenticado();
 
-    $db = conectarDB();
+    $db = conectarDB(); // Conexion a la base de datos
 
     // Consultar para obtener a los vendedores
     $consulta = "SELECT * FROM vendedores;";
@@ -29,6 +25,8 @@
 
     // Ejecutar el código después de que el usuario envia el formulario
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
+
+        $propiedad = new Propiedad($_POST); // Creando la instancia del nuevo objeto de la propiedad
 
         //echo "<pre>";
         //var_dump($_POST);
@@ -196,7 +194,7 @@
             <fieldset>
                 <legend>Vendedor</legend>
 
-                <select name="vendedor" >
+                <select name="vendedorId" >
                     <option value="">-- Seleccione --</option>
                     <?php while($row = mysqli_fetch_assoc($resultado)) : ?>
                         <option <?php echo $vendedorId === $row['id'] ? 'selected' : ''; ?>  value="<?php echo $row['id']; ?>"><?php echo $row['nombre'] . " " . $row['apellido']; ?></option>

@@ -1,7 +1,6 @@
 <?php
 
     // Importar la conexion
-    require 'includes/config/database.php'; // Recordar que lo está tomando como si fuera desde index.php
     $db = conectarDB();
 
     // Consultar

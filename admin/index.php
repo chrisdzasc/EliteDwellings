@@ -1,14 +1,10 @@
 <?php
 
-    require '../includes/funciones.php'; // Incluye el archivo 'funciones.php' desde el directorio 'includes'
-    $auth = estaAutenticado();
-
-    if(!$auth){ // Si no es true
-        header('Location: ../index.php'); // Redirecciona a la página de inicio del proyecto
-    }
+    require '../includes/app.php'; // Incluye el archivo 'funciones.php' desde el directorio 'includes'
+    
+    estaAutenticado();
 
     // Importar la conexion
-    require '../includes/config/database.php';
     $db = conectarDB();
 
     // Escribir el query

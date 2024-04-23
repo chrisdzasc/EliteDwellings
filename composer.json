@@ -1,0 +1,17 @@
+{
+    "name": "chris/bienesraices",
+    "description": "Creando un Proyecto con POO",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Christian Diaz",
+            "email": "christian.dzasc@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\" : "./classes"
+        }
+    }
+}

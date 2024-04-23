@@ -1,7 +1,7 @@
 <?php
 
-    // Conexion a la base de datos
-    require 'includes/config/database.php';
+    // Incluye el Header
+    require 'includes/app.php'; // Incluye el archivo 'funciones.php' desde el directorio 'includes'
     $db = conectarDB();
 
     // En caso de que el usuario ingrese información mal, aqui se van a guardar los errores
@@ -55,8 +55,6 @@
         }
     }
 
-    // Incluye el Header
-    require 'includes/funciones.php'; // Incluye el archivo 'funciones.php' desde el directorio 'includes'
     incluirTemplate('header'); // Llama a la función incluirTemplate() con dos argumentos: 'header' como el nombre del archivo de plantilla a incluir.
 ?>
 

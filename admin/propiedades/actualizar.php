@@ -1,11 +1,8 @@
 <?php
 
-    require '../../includes/funciones.php'; // Incluye el archivo 'funciones.php' desde el directorio 'includes'
-    $auth = estaAutenticado();
-
-    if(!$auth){ // Si no es true
-        header('Location: ../../index.php'); // Redirecciona a la página de inicio del proyecto
-    }
+    require '../../includes/app.php'; // Incluye el archivo 'funciones.php' desde el directorio 'includes'
+    
+    estaAutenticado();
 
     // Validar la URL por ID válido
     $id = $_GET['id'];
@@ -16,7 +13,6 @@
     }
 
     // Base de Datos
-    require '../../includes/config/database.php';
     $db = conectarDB();
 
     // Obtener los datos de la propiedad

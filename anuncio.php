@@ -8,8 +8,9 @@
         header('Location: /bienesraices/anuncios.php');
     }
 
+    require 'includes/app.php'; // Incluye el archivo 'funciones.php' desde el directorio 'includes'
+
     // Conexión a la base de datos
-    require 'includes/config/database.php'; // Recordar que lo está tomando como si fuera desde index.php
     $db = conectarDB();
 
     // Obtener los datos de la propiedad a mostrar
@@ -21,8 +22,6 @@
     }
 
     $propiedad = mysqli_fetch_assoc($resultadoConsulta);
-
-    require 'includes/funciones.php'; // Incluye el archivo 'funciones.php' desde el directorio 'includes'
     
     incluirTemplate('header'); // Llama a la función incluirTemplate() con dos argumentos: 'header' como el nombre del archivo de plantilla a incluir.
 ?>

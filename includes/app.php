@@ -1,9 +1,11 @@
-<?php
+<?php // Archivo que va a mandar llamar funciones, bases de datos y clases.
 
-// Define la constante para la ruta al directorio de plantillas
-define('TEMPLATES_URL', __DIR__ . '/templates');
+require 'funciones.php'; // Archivo que va a mandar llamar funciones y clases
 
-// Defina la constante para la ruta al archivo de funciones
-define('FUNCIONES_URL', __DIR__ . 'funciones.php');
+require 'config/database.php'; // Para obtener la conexión a la base de datos
+
+require __DIR__ . '/../vendor/autoload.php'; // Para incluir el autoload
+
+use App\Propiedad;
 
 ?>

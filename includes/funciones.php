@@ -1,6 +1,10 @@
 <?php
 
-require 'app.php'; // Incluye el archivo 'app.php', que contiene las constantes
+// Define la constante para la ruta al directorio de plantillas
+define('TEMPLATES_URL', __DIR__ . '/templates');
+
+// Defina la constante para la ruta al archivo de funciones
+define('FUNCIONES_URL', __DIR__ . 'funciones.php');
 
 function incluirTemplate( string $nombre, bool $inicio = false ){
     include TEMPLATES_URL . "/$nombre.php"; // Incluye un archivo de plantilla según el nombre proporcionado.
@@ -8,13 +12,17 @@ function incluirTemplate( string $nombre, bool $inicio = false ){
     // $nombre es el nombre del archivo de plantilla a incluir, y se espera que exista en el directorio de plantillas.
 }
 
-function estaAutenticado() : bool{ // estaAutenticado() va a regresar un booleano
+function estaAutenticado(){ // estaAutenticado() va a regresar un booleano
     session_start(); // Inicia la session
 
-    $auth = $_SESSION['login']; // Guarda el valor que tenga en el campo de login en la variable auth
-
-    if($auth){ // Si es true
-        return true; // Retorna true
+    if(!$_SESSION['login'] ){ // Si es true
+        header('Location: /');
     }
-    return false; // Retorna false
+}
+
+function debuguear($variable){
+    echo "<pre>";
+    var_dump($variable);
+    echo "</pre>";
+    exit;
 }
