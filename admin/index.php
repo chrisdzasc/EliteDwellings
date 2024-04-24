@@ -4,14 +4,13 @@
     
     estaAutenticado();
 
+    use App\Propiedad;
+
     // Importar la conexion
     $db = conectarDB();
 
-    // Escribir el query
-    $query = "SELECT * FROM propiedades";
-
-    // Consultar la base de dato
-    $resultadoConsulta = mysqli_query($db, $query);
+    // Implementar un método para obtener todas las propiedades
+    $propiedades = Propiedad::all();
 
     // Muestra mensaje cuando se crea una propiedad nueva
     $resultado = $_GET['resultado'] ?? null;
@@ -67,22 +66,22 @@
             </thead>
 
             <tbody> <!-- Mostrar los resultados -->
-                <?php while($propiedad = mysqli_fetch_assoc($resultadoConsulta)) : ?>
+                <?php foreach( $propiedades as $propiedad ) : ?>
                 <tr>
-                    <td> <?php echo $propiedad['id']; ?> </td>
-                    <td> <?php echo $propiedad['titulo']; ?> </td>
-                    <td> <img src="../imagenes/<?php echo $propiedad['imagen'] ?>" class="imagen-tabla"> </td>
-                    <td>$ <?php echo $propiedad['precio']; ?> </td>
+                    <td> <?php echo $propiedad->id; ?> </td>
+                    <td> <?php echo $propiedad->titulo; ?> </td>
+                    <td> <img src="../imagenes/<?php echo $propiedad->imagen; ?>" class="imagen-tabla"> </td>
+                    <td>$ <?php echo $propiedad->precio; ?> </td>
                     <td>
                         <form method="POST" class="w-100">
-                            <input type="hidden" name="id" value=" <?php echo $propiedad['id']; ?>"> <!-- No sea visible, pero una vez que le den eliminar se mandan los valores -->
+                            <input type="hidden" name="id" value=" <?php echo $propiedad->id; ?>"> <!-- No sea visible, pero una vez que le den eliminar se mandan los valores -->
 
                             <input type="submit" class="boton-rojo-block" value="Eliminar">
                         </form>
-                        <a href="propiedades/actualizar.php?id=<?php echo $propiedad['id']; ?>" class="boton-azul-block">Actualizar</a>
+                        <a href="propiedades/actualizar.php?id=<?php echo $propiedad->id; ?>" class="boton-azul-block">Actualizar</a>
                     </td>
                 </tr>
-                <?php endwhile; ?>
+                <?php endforeach; ?>
             </tbody>
         </table>
     </main>
