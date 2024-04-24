@@ -21,15 +21,15 @@
     // Ejecutar el código después de que el usuario envia el formulario
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
-        $propiedad = new Propiedad($_POST); // Creando la instancia del nuevo objeto de la propiedad
+        $propiedad = new Propiedad($_POST['propiedad']); // Creando la instancia del nuevo objeto de la propiedad
 
         // Generar un nombre unico
         $nombreImagen = md5( uniqid(rand(), true) ) . ".jpeg"; // Va a hashear
 
         // Le vamos a setear la imagen
         // Realiza un resize a la imagen con intervention
-        if($_FILES['imagen']['tmp_name']){
-            $image = Image::make($_FILES['imagen']['tmp_name'])->fit(800,600);
+        if($_FILES['propiedad']['tmp_name']['imagen']){
+            $image = Image::make($_FILES['propiedad']['tmp_name']['imagen'])->fit(800,600);
             $propiedad->setImagen($nombreImagen);
         }
 
