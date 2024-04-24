@@ -6,6 +6,8 @@ define('TEMPLATES_URL', __DIR__ . '/templates');
 // Defina la constante para la ruta al archivo de funciones
 define('FUNCIONES_URL', __DIR__ . 'funciones.php');
 
+define('CARPETAS_IMAGENES', __DIR__ . '/../imagenes/');
+
 function incluirTemplate( string $nombre, bool $inicio = false ){
     include TEMPLATES_URL . "/$nombre.php"; // Incluye un archivo de plantilla según el nombre proporcionado.
     // TEMPLATES_URL es una constante definida en el 'app.php' que contiene la ruta al directorio de plantillas.

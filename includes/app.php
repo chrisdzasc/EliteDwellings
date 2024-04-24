@@ -6,6 +6,10 @@ require 'config/database.php'; // Para obtener la conexión a la base de datos
 
 require __DIR__ . '/../vendor/autoload.php'; // Para incluir el autoload
 
+// Conectarnos a la Base de Datos
+$db = conectarDB();
+
 use App\Propiedad;
 
+Propiedad::setDB($db);
 ?>

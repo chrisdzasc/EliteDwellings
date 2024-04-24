@@ -1,7 +1,7 @@
 <?php
 
 function conectarDB() : mysqli{
-    $db = mysqli_connect('', '', '', '');
+    $db = new mysqli('', '', '', '');
 
     $db->set_charset('utf8');
 
