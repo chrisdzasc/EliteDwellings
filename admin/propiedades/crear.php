@@ -3,17 +3,15 @@
     require '../../includes/app.php'; // Incluye el archivo 'funciones.php' desde el directorio 'includes'
 
     use App\Propiedad;
+    use App\Vendedor;
     use Intervention\Image\ImageManagerStatic as Image;
 
     estaAutenticado();
 
-    $db = conectarDB(); // Conexion a la base de datos
-
     $propiedad = new Propiedad;
 
-    // Consultar para obtener a los vendedores
-    $consulta = "SELECT * FROM vendedores;";
-    $resultado = mysqli_query($db, $consulta);
+    // Consulta para obtener todos los vendedores
+    $vendedores = Vendedor::all();
 
     // Arreglo con mensajes de errores
     $errores = Propiedad::getErrores();
@@ -48,12 +46,7 @@
             $image->save(CARPETAS_IMAGENES . $nombreImagen);
 
             // guarda en la base de datos
-            $resultado = $propiedad->guardar();
-
-            if($resultado){
-                // Redireccionar al usuario una vez insertado en la base de datos
-                header('Location: /bienesraices/admin/index.php?resultado=1');
-            }
+            $propiedad->guardar();
         }
 
     }
